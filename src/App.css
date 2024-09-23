@@ -1,0 +1,281 @@
+/* App */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+}
+
+
+.layout {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+.dragCont {
+  width: 20%;
+  padding: 1rem;
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-right: 20px;
+}
+.dragCont p {
+  padding: 10px;
+  
+  border-radius: 5px;
+  text-align: center;
+  cursor: grab;
+ transition: background-color 0.2s ease; 
+}
+
+
+.rightCont {
+  width: 75%;
+  padding: 1rem;
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px dashed black;
+}
+
+ .btn:hover {
+  cursor: pointer;
+}
+
+.heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+} 
+.heading input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+.heading button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.heading button:nth-child(3) {
+  background-color: #ffc107;
+}
+
+.heading button:nth-child(4) {
+  background-color: #007bff;
+}
+
+.heading button:hover {
+  background-color: #218838;
+}
+
+.heading button:nth-child(3):hover {
+  background-color: #e0a800;
+}
+
+.heading button:nth-child(4):hover {
+  background-color: #0056b3;
+}
+.heading button:hover {
+  background-color: #45a049;
+}
+.dropCont {
+  height: 300px;
+  padding: 1rem;
+ 
+  border-radius: 20px;
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.dropCont > div {
+  margin-bottom: 1rem;
+}
+
+
+
+/* modal */
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+
+.modal {
+  width: 300px;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.modal h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.modal .modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.modal button {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #f0f0f0;
+}
+
+.modal .btn-save {
+  background-color: #4c77af;
+  color: white;
+}
+.dropCont .placeholder {
+  color: #ccc;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+}
+
+.modal .btn-close {
+  background-color: #f44336;
+  color: white;
+}
+
+.modal button:focus {
+  outline: none;
+}
+
+
+/* droppable */
+.dropCont .droppable-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.droppable-container {
+  width: 100%;
+  height: 500px;
+  background-color: #f9f9f9;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.droppable-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.droppable-item label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.droppable-item input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.droppable-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.droppable-item button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.droppable-item .btn-edit {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.droppable-item .btn-delete {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.droppable-item button:hover {
+  opacity: 0.9;
+}
+
+.droppable-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+  font-size: 1.2rem;
+}
